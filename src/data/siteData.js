@@ -74,18 +74,32 @@ export const siteData = {
     {
       id: "finai",
       title: "FINAİ",
-      tagline: "Yapay Zeka Destekli Finans Analiz Asistanı",
-      description: "Finansal verileri, bütçeleri ve piyasa analizlerini yapay zeka modelleriyle işleyerek kişiselleştirilmiş içgörüler sunan akıllı finans platformu.",
+      tagline: "BİST Temel Analiz ve AI Araştırma Platformu",
+      description: "Borsa İstanbul'da işlem gören şirketlerin finansal tablolarını, rasyolarını, KAP duyurularını ve finans haberlerini otomatik analiz eden; 11 temel kategoride objektif puanlama yapan ve Google Gemini AI ile şirket araştırma notları üreten modern finansal analiz platformu.",
       category: "AI & Fintech",
-      status: "Canlı (Streamlit)",
+      status: "Canlı",
       liveUrl: "https://finaii.streamlit.app/",
-      githubUrl: "https://github.com/ufukerenkurt",
-      tags: ["Python", "Streamlit", "AI / LLM", "Financial Analysis"],
+      githubUrl: "https://github.com/kargamak/FinAI",
+      tags: ["Python", "Streamlit", "Google Gemini AI", "SQLAlchemy", "Plotly", "yfinance", "Pandas", "SQLite"],
       features: [
-        "Doğal dil ile harcama ve bütçe analizi",
-        "Tahmine dayalı portföy grafik modelleme",
-        "Kişiselleştirilmiş finansal içgörüler"
-      ]
+        "11 Temel Kalite Skoru: Finansal Sağlık, Kârlılık, Büyüme, Borç Yönetimi, Likidite, Nakit Akışı, Değerleme Çarpanları, Yönetim Kalitesi, KAP Etkisi, Haber Duygu Analizi, Makro Dayanıklılık",
+        "3 görünüm modu: Epic Games tarzı satır listesi, 4 sütunlu kart ızgarası, TradingView bağlantılı detaylı tablo",
+        "Gemini AI hisse analisti: sayfa içi soru-cevap ve şirket araştırma notu üretimi",
+        "1-tıkla prompt kopyalama: bilanço özetini ChatGPT / Claude / DeepSeek'e yapıştırarak derin analiz",
+        "Canlı Google News RSS ve KAP entegrasyonu ile anlık haber akışı",
+        "Yıldız Pazar, BİST 30, BİST 100, Ana Pazar ve sektör bazında filtreleme"
+      ],
+      techStack: [
+        { label: "Dil", value: "Python 3.13 / 3.14" },
+        { label: "Arayüz", value: "Streamlit · Özel CSS (Obsidian Dark + Glassmorphism)" },
+        { label: "Yapay Zeka", value: "Google Gemini 2.5 Flash" },
+        { label: "Veritabanı", value: "SQLite · SQLAlchemy 2.0" },
+        { label: "Analitik", value: "Pandas · NumPy · Plotly (Radar & Dağılım)" },
+        { label: "Veri", value: "yfinance · BeautifulSoup4 · Google News RSS · KAP" },
+        { label: "DevOps", value: "GitHub · Streamlit Community Cloud" },
+      ],
+      categories: ["Finansal Sağlık", "Kârlılık", "Büyüme", "Borç Yönetimi", "Likidite", "Nakit Akışı", "Değerleme", "Yönetim", "KAP Duyuruları", "Haber Analizi", "Makro Dayanıklılık"],
+      elevator: "FinAI; yatırımcıların yüzlerce sayfalık bilanço yerine saniyeler içinde şirketin finansal sağlığını, kârlılığını ve risklerini 11 kategoride puanlanmış ve AI analiziyle zenginleştirilmiş formatta görmesini sağlar."
     },
     {
       id: "pixelcam",
