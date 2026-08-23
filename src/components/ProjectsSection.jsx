@@ -121,7 +121,11 @@ export default function ProjectsSection() {
                       {project.categories && (
                         <div className="space-y-2">
                           <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
-                            {project.id === 'finai' ? '11 Analiz Kategorisi' : 'Desteklenen Kategoriler'}
+                            {project.id === 'finai'
+                              ? '11 Analiz Kategorisi'
+                              : project.id === 'memory-line'
+                              ? 'Özel Takımyıldızı Seviyeleri'
+                              : 'Desteklenen Kategoriler'}
                           </span>
                           <div className="flex flex-wrap gap-1.5">
                             {project.categories.map((cat, i) => (

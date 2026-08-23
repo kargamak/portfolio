@@ -55,18 +55,32 @@ export const siteData = {
     {
       id: "memory-line",
       title: "MEMORY LİNE",
-      tagline: "Dijital Anı & Zaman Çizelgesi Platformu",
-      description: "Kullanıcıların hayatlarındaki dönüm noktalarını, anılarını ve hedeflerini interaktif bir zaman çizelgesinde kronolojik olarak saklayıp paylaştığı platform.",
-      category: "Web & Arşiv",
+      tagline: "Görsel hafızayı ve refleksleri test eden minimalist web oyunu",
+      description: "Karanlık bir ızgara üzerinde sırayla beliren çizgi desenini akılda tutup, ekrandan el kaldırmadan doğru sırada noktaları birbirine bağlayarak deseni yeniden çizmeye dayanan modern ve minimalist bir hafıza oyunu. Hazır oyun motoru kullanılmadan saf HTML5 Canvas ile 60 FPS olarak geliştirildi.",
+      category: "Web Oyunu",
       status: "Canlı",
       liveUrl: "https://memoryline-azure.vercel.app/",
-      githubUrl: "https://github.com/ufukerenkurt",
-      tags: ["Timeline", "Cloud Storage", "Next.js", "Azure / Vercel"],
+      githubUrl: "https://github.com/kargamak/memory_line",
+      tags: ["React 19", "TypeScript", "Vite", "HTML5 Canvas", "Web Audio API", "LocalStorage"],
       features: [
-        "Etkileşimli dinamik zaman çizelgesi",
-        "Medya ve anı koleksiyonları",
-        "Tarihe göre akıllı filtreleme"
-      ]
+        "Saf HTML5 Canvas 2D: DOM olmadan 60 FPS çizim, Retina / yüksek DPI ekran desteği",
+        "Web Audio API ses sentezleyici: harici ses dosyası yok, doğru bağlantılarda pentatonik notalar, hatalarda gerçek zamanlı frekans dalgaları",
+        "Özel takımyıldızı seviyeleri: Büyük Ayı, Küçük Ayı, Kasiopeya, Kozmik Şimşek ve daha fazlası — özel renk teması, ışıltı ve bonus puan",
+        "Matematiksel zorluk eğrisi: seviye 1–3 lineer, 3–13 kademeli, 13+ ustalık formülü",
+        "Zero-Skip Komşuluk Filtresi: uzak noktalardan geçerken haksız yanma engellendi",
+        "Maç sonu analiz paneli: skor, seviye, kombo, hata, en zorlanılan bölüm, süre, keşfedilen şekil sayısı",
+        "TR / ENG çoklu dil ve S/M/L/XL boyut seçenekleri",
+        "LocalStorage: rekort ve tercihler tarayıcıda yerel olarak saklanır"
+      ],
+      techStack: [
+        { label: "Framework", value: "React 19 · TypeScript" },
+        { label: "Build", value: "Vite (HMR · yüksek performans)" },
+        { label: "Grafik", value: "HTML5 Canvas 2D API · Lerp fiziği · 60 FPS" },
+        { label: "Ses", value: "Web Audio API osilatörleri (dosyasız sentez)" },
+        { label: "Depolama", value: "LocalStorage API" },
+      ],
+      categories: ["Büyük Ayı", "Küçük Ayı", "Kasiopeya", "Kozmik Şimşek", "Gök Elması", "Kozmik Yıldız", "Kozmik Kalp", "Sonsuzluk"],
+      elevator: "Memory Line; hazır motor olmadan, saf Canvas ve Web Audio API ile sıfırdan inşa edilmiş, görsel hafıza ve refleksleri test eden minimalist bir web oyunudur."
     },
     {
       id: "finai",
