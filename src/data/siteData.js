@@ -35,7 +35,7 @@ export const siteData = {
       category: "Web Platformu",
       status: "Canlı",
       liveUrl: "https://list0r.vercel.app/",
-      githubUrl: "https://github.com/kargamak",
+      githubUrl: "https://github.com/ufukerenkurt",
       tags: ["Next.js 16", "TypeScript", "React 19", "Supabase", "TMDB API", "RAWG API", "Tailwind CSS"],
       features: [
         "Otomatik sıralama: katılımcı puanlarının ortalamasıyla liste anlık güncellenir, ilk 3 içerik altın/gümüş/bronz rozet alır",
@@ -120,7 +120,7 @@ export const siteData = {
       category: "Görüntü İşleme",
       status: "Aktif",
       liveUrl: "#",
-      githubUrl: "https://github.com/kargamak",
+      githubUrl: "https://github.com/ufukerenkurt",
       tags: ["Image Processing", "Pixel Art", "Pipeline", "Mobile"],
       features: [
         "Live pixel-art processing (Canlı piksel sanatı işleme)",
