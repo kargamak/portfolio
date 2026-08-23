@@ -8,19 +8,19 @@
 export const siteData = {
   // --- KİŞİSEL BİLGİLER ---
   personal: {
-    name: "UFUK EREN KURT",
+    name: "Ufuk Eren Kurt",
     title: "Yönetim Bilişim Sistemleri Öğrencisi • Ürün Yönetimi & Sistem Analizi",
     dateOfBirth: "01/01/2004",
     location: "İstanbul / Antalya, Türkiye",
-    phone: "(+90) 5448945358",
+    phone: "(+90) 544 894 53 58",
     email: "ufukerenkurt03@gmail.com",
     linkedin: "https://www.linkedin.com/in/ufukerenkurt",
-    github: "https://github.com/ufukerenkurt",
+    github: "https://github.com/kargamak",
   },
 
   // --- HAKKIMDA (ABOUT ME) ---
   about: {
-    title: "HAKKIMDA",
+    title: "Hakkımda",
     en: "As a fourth-year MIS student focused on Product Management, I am developing skills in user-centered design, product strategy, and data-informed decision making. I actively follow technological trends to better understand product development processes and user needs. Previously, I served as president of the AkdeMIS community, gaining experience in leadership, stakeholder communication, and coordinating product-oriented initiatives, including organizing a major Technology & Management Summit with nearly 400 participants.",
     tr: "Ürün Yönetimi (Product Management) ve Sistem Analizi odaklı Yönetim Bilişim Sistemleri 4. sınıf öğrencisiyim. Kullanıcı odaklı tasarım, ürün stratejisi ve veriye dayalı karar alma süreçlerinde kendimi geliştiriyorum. Teknoloji trendlerini ve kullanıcı ihtiyaçlarını yakından takip ediyorum. AkdeMIS topluluğu başkanlığı görevim süresince liderlik, paydaş iletişimi ve 400 katılımcılı TeknoYön Teknoloji & Yönetim Zirvesi gibi büyük ölçekli organizasyonların koordinasyonunu üstlendim."
   },
@@ -29,13 +29,13 @@ export const siteData = {
   projects: [
     {
       id: "listor",
-      title: "LİSTOR",
+      title: "Listor",
       tagline: "A list creator for anything",
       description: "Arkadaş grupları, çiftler ve toplulukların film, dizi, oyun, kitap ve müzik listelerini ortaklaşa oluşturup beraber puanlayabildiği, çoklu API entegrasyonuyla güçlendirilmiş gerçek zamanlı sosyal keşif ve derecelendirme platformu.",
       category: "Web Platformu",
       status: "Canlı",
       liveUrl: "https://list0r.vercel.app/",
-      githubUrl: "https://github.com/ufukerenkurt",
+      githubUrl: "https://github.com/kargamak",
       tags: ["Next.js 16", "TypeScript", "React 19", "Supabase", "TMDB API", "RAWG API", "Tailwind CSS"],
       features: [
         "Otomatik sıralama: katılımcı puanlarının ortalamasıyla liste anlık güncellenir, ilk 3 içerik altın/gümüş/bronz rozet alır",
@@ -50,11 +50,11 @@ export const siteData = {
         { label: "API'ler", value: "TMDB · RAWG · Open Library · Apple iTunes" },
       ],
       categories: ["Filmler", "Diziler", "Oyunlar", "Kitaplar", "Müzikler", "Özel / Diğer"],
-      elevator: "LISTOR; arkadaş gruplarının ortak listeler kurup beraber puanladığı, gerçek zamanlı sıralama ve çoklu API entegrasyonuyla çalışan sosyal bir keşif platformudur."
+      elevator: "Listor; arkadaş gruplarının ortak listeler kurup beraber puanladığı, gerçek zamanlı sıralama ve çoklu API entegrasyonuyla çalışan sosyal bir keşif platformudur."
     },
     {
       id: "memory-line",
-      title: "MEMORY LİNE",
+      title: "Memory Line",
       tagline: "Görsel hafızayı ve refleksleri test eden minimalist web oyunu",
       description: "Karanlık bir ızgara üzerinde sırayla beliren çizgi desenini akılda tutup, ekrandan el kaldırmadan doğru sırada noktaları birbirine bağlayarak deseni yeniden çizmeye dayanan modern ve minimalist bir hafıza oyunu. Hazır oyun motoru kullanılmadan saf HTML5 Canvas ile 60 FPS olarak geliştirildi.",
       category: "Web Oyunu",
@@ -70,7 +70,7 @@ export const siteData = {
         "Zero-Skip Komşuluk Filtresi: uzak noktalardan geçerken haksız yanma engellendi",
         "Maç sonu analiz paneli: skor, seviye, kombo, hata, en zorlanılan bölüm, süre, keşfedilen şekil sayısı",
         "TR / ENG çoklu dil ve S/M/L/XL boyut seçenekleri",
-        "LocalStorage: rekort ve tercihler tarayıcıda yerel olarak saklanır"
+        "LocalStorage: rekorlar ve tercihler tarayıcıda yerel olarak saklanır"
       ],
       techStack: [
         { label: "Framework", value: "React 19 · TypeScript" },
@@ -84,7 +84,7 @@ export const siteData = {
     },
     {
       id: "finai",
-      title: "FINAİ",
+      title: "FinAI",
       tagline: "BİST Temel Analiz ve AI Araştırma Platformu",
       description: "Borsa İstanbul'da işlem gören şirketlerin finansal tablolarını, rasyolarını, KAP duyurularını ve finans haberlerini otomatik analiz eden; 11 temel kategoride objektif puanlama yapan ve Google Gemini AI ile şirket araştırma notları üreten modern finansal analiz platformu.",
       category: "AI & Fintech",
@@ -114,13 +114,13 @@ export const siteData = {
     },
     {
       id: "pixelcam",
-      title: "PIXELCAM",
+      title: "PixelCam",
       tagline: "Real-time pixel art camera app",
       description: "Canlı piksel sanatı işleme, özelleştirilebilir renk paletleri ve efektler sunan kamera uygulaması.",
       category: "Görüntü İşleme",
       status: "Aktif",
       liveUrl: "#",
-      githubUrl: "https://github.com/ufukerenkurt",
+      githubUrl: "https://github.com/kargamak",
       tags: ["Image Processing", "Pixel Art", "Pipeline", "Mobile"],
       features: [
         "Live pixel-art processing (Canlı piksel sanatı işleme)",
@@ -133,25 +133,25 @@ export const siteData = {
   // --- İŞ DENEYİMLERİ (WORK EXPERIENCE) ---
   experience: [
     {
-      role: "SOFTWARE SYSTEM ANALYST INTERN",
-      company: "IDENTIFY",
+      role: "Software System Analyst Intern",
+      company: "Identify",
       period: "30/06/2025 – 23/06/2026",
       location: "İstanbul, Türkiye",
       points: [
-        "Assisted in gathering, documenting and analyzing business requirements",
-        "Supported the preparation of system flowcharts and process models to understand user needs",
-        "Contributed to creating test scenarios and technical documentation for the analysis team"
+        "İş gereksinimlerinin toplanması, belgelenmesi ve analiz süreçlerine katkı sağlandı.",
+        "Kullanıcı ihtiyaçlarını anlamak için sistem akış şemaları ve süreç modellerinin hazırlanması desteklendi.",
+        "Analiz ekibi için test senaryoları ve teknik dokümantasyon oluşturulmasında aktif rol alındı."
       ]
     },
     {
-      role: "WAREHOUSE AND LOGISTICS OPERATIONS",
-      company: "EKOL LOGISTIC",
+      role: "Warehouse and Logistics Operations",
+      company: "Ekol Logistics",
       period: "03/07/2023 – 10/08/2023",
       location: "İstanbul, Türkiye",
       points: [
-        "Ensured accuracy by managing product picking and distribution processes using handheld terminals.",
-        "Contributed to smooth logistics operations by supporting product receiving processes.",
-        "Actively participated in team-based tasks, fostering collaboration and effective communication."
+        "El terminalleri ile ürün toplama ve dağıtım süreçleri yönetilerek doğruluk ve verimlilik sağlandı.",
+        "Mal kabul ve envanter süreçlerine destek verilerek operasyonel akış kolaylaştırıldı.",
+        "Takım çalışması ve etkin iletişim odaklı operasyon görevleri başarıyla yürütüldü."
       ]
     }
   ],
@@ -159,14 +159,14 @@ export const siteData = {
   // --- EĞİTİM & LİDERLİK ---
   education: [
     {
-      degree: "MANAGEMENT INFORMATION SYSTEMS (YBS)",
-      school: "Akdeniz University",
-      period: "10/10/2023 – CURRENT",
+      degree: "Yönetim Bilişim Sistemleri (Lisans)",
+      school: "Akdeniz Üniversitesi",
+      period: "10/10/2023 – Günümüz",
       location: "Antalya, Türkiye",
-      description: "Strong foundation in data management, systems analysis, and digital transformation. Focused on designing information systems that improve organizational efficiency. Interested in data analysis, product management, project management, and technology integration.",
+      description: "Veri yönetimi, sistem analizi ve dijital dönüşüm odaklı eğitim. Kurumsal verimliliği artıran bilgi sistemlerinin tasarımı, ürün ve proje yönetimi alanlarında uzmanlaşma.",
       leadership: {
-        title: "Former President – AkdeMIS (500+ members)",
-        details: "Led Turkey’s first MIS student community at Akdeniz University. Organized II. TeknoYon Technology & Management Summit (400 participants), managing speakers, logistics, and partnerships."
+        title: "Eski Topluluk Başkanı – AkdeMIS (500+ Üye)",
+        details: "Akdeniz Üniversitesi'nde Türkiye'nin ilk YBS öğrenci topluluğunun başkanlığı yürütüldü. 400 katılımcılı II. TeknoYön Teknoloji & Yönetim Zirvesi'nin konuşmacı, lojistik ve sponsorluk koordinasyonu yönetildi."
       }
     }
   ],
@@ -174,38 +174,39 @@ export const siteData = {
   // --- KONFERANSLAR ---
   conferences: [
     {
-      title: "Linux Users Federation Winter Camp",
-      organization: "Afyon Kocatepe University",
+      title: "Linux Kullanıcıları Derneği Kış Kampı",
+      organization: "Afyon Kocatepe Üniversitesi",
       period: "04/02/2026 – 08/02/2026",
-      details: "Completed theoretical training on microservices architecture and SDLC-based software development practices. Covered CI/CD, DevOps, containerization, and key system design patterns. Developed a solid conceptual understanding of high-availability architectures, monitoring, and secure software lifecycle management."
+      details: "Mikroservis mimarileri, SDLC tabanlı yazılım geliştirme, CI/CD, DevOps, konteynerleştirme ve temel sistem tasarım kalıpları üzerine teorik ve pratik eğitim tamamlandı."
     }
   ],
 
   // --- YETENEKLER (SKILLS) ---
   skillCategories: [
     {
-      name: "Data & Analysis",
-      skills: ["SQL and database management", "Data-driven reporting and insight generation", "Large dataset processing"]
+      name: "Veri & Analiz",
+      skills: ["SQL ve Veritabanı Yönetimi", "Veri Odaklı Raporlama ve İçgörü Üretimi", "Büyük Veri Kümeleri İşleme"]
     },
     {
-      name: "Systems & Processes",
-      skills: ["System analysis and business process modeling", "Project management fundamentals (Scrum, Kanban, Agile)", "System testing and documentation (SDLC, STLC)"]
+      name: "Sistem & Süreçler",
+      skills: ["Sistem Analizi ve İş Süreci Modelleme", "Proje Yönetimi (Scrum, Kanban, Agile)", "Yazılım Testi ve Dokümantasyon (SDLC, STLC)"]
     },
     {
-      name: "Tech & Tools",
-      skills: ["Python", "C++", "C#", "ASP.NET", "Web Programming", "Atlassian stack (Jira, Confluence)", "CRM Systems"]
+      name: "Teknolojiler & Araçlar",
+      skills: ["Python", "C++", "C#", "ASP.NET", "Web Programlama (React, Next.js)", "Atlassian Stack (Jira, Confluence)", "CRM Sistemleri"]
     },
     {
-      name: "Languages",
-      skills: ["Turkish (Mother tongue)", "English (B2 - Independent User)"]
+      name: "Diller",
+      skills: ["Türkçe (Ana Dil)", "İngilizce (B2 - Bağımsız Kullanıcı)"]
     }
   ],
 
-  // --- ALT LİNKLER ---
+  // --- SOSYAL MEDYA & İLETİŞİM ---
   socials: [
-    { name: "linkedin", url: "https://www.linkedin.com/in/ufukerenkurt" },
-    { name: "github", url: "https://github.com/ufukerenkurt" },
-    { name: "mail", url: "mailto:ufukerenkurt03@gmail.com" },
-    { name: "phone", url: "tel:+905448945358", label: "+90 544 894 53 58" }
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/ufukerenkurt" },
+    { name: "GitHub", url: "https://github.com/kargamak" },
+    { name: "E-Posta", url: "mailto:ufukerenkurt03@gmail.com" },
+    { name: "Telefon", url: "tel:+905448945358", label: "+90 544 894 53 58" }
   ]
 };
+

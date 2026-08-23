@@ -8,7 +8,7 @@ export default function Navbar() {
         href="#"
         className="text-sm font-semibold tracking-widest text-white uppercase hover:text-white/70 transition-colors"
       >
-        {siteData.personal.name.split(' ')[0]}
+        {siteData.personal.name}
       </a>
 
       <div className="flex items-center gap-6">
@@ -24,17 +24,18 @@ export default function Navbar() {
         <a href="#yetenekler" className="text-xs text-[#737373] hover:text-white transition-colors hidden md:block">
           Yetenekler
         </a>
-        <a href="#iletisim" className="text-xs text-[#737373] hover:text-white transition-colors hidden sm:block">
+        <a href="#iletisim" className="text-xs text-[#737373] hover:text-white transition-colors">
           İletişim
         </a>
 
         <a
           href={`mailto:${siteData.personal.email}`}
-          className="text-xs px-3.5 py-1.5 rounded border border-white/10 text-[#a3a3a3] hover:text-white hover:border-white/30 transition-all"
+          className="text-xs px-3.5 py-1.5 rounded border border-white/10 text-[#a3a3a3] hover:text-white hover:border-white/30 transition-all hidden sm:inline-block"
         >
-          İletişim
+          E-Posta
         </a>
       </div>
     </nav>
   );
 }
+
