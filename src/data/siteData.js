@@ -30,18 +30,30 @@ export const siteData = {
     {
       id: "listor",
       title: "LİSTOR",
-      tagline: "Collaborative listing & rating app",
-      description: "Gerçek zamanlı paylaşımlı listeler ve kolektif puanlama algoritması ile kullanıcı odaklı, temiz arayüze sahip ortak liste yönetim uygulaması.",
-      category: "Web Uygulaması",
+      tagline: "A list creator for anything",
+      description: "Arkadaş grupları, çiftler ve toplulukların film, dizi, oyun, kitap ve müzik listelerini ortaklaşa oluşturup beraber puanlayabildiği, Google Gemini AI özetleri ve çoklu API entegrasyonuyla güçlendirilmiş gerçek zamanlı sosyal keşif platformu.",
+      category: "Web Platformu",
       status: "Canlı",
       liveUrl: "https://list0r.vercel.app/",
       githubUrl: "https://github.com/ufukerenkurt",
-      tags: ["Real-time", "Scoring Algorithm", "UI/UX", "Next.js / React"],
+      tags: ["Next.js 16", "TypeScript", "React 19", "Supabase", "Google Gemini AI", "TMDB API", "RAWG API", "Tailwind CSS"],
       features: [
-        "Real-time shared lists (Gerçek zamanlı paylaşımlı listeler)",
-        "Collective scoring algorithm (Kolektif puanlama algoritması)",
-        "Clean, user-focused UI (Kullanıcı odaklı arayüz)"
-      ]
+        "Otomatik sıralama: katılımcı puanlarının ortalamasıyla liste anlık güncellenir, ilk 3 içerik altın/gümüş/bronz rozet alır",
+        "Film rulosu puanlama arayüzü: retro kaydırıcıyla 1–10 puan veya 'İzlemedim' seçeneği",
+        "Google Gemini AI: her eklenen içerik için otomatik, spoiler içermeyen tek cümlelik Türkçe özet",
+        "İçerik içi canlı sohbet: her kart altında yorum ve not alanı",
+        "5 küresel API: Film/Dizi (TMDB), Oyun (RAWG), Kitap (Open Library), Müzik (iTunes)",
+        "Kullanıcı rolleri: Admin, Liste Sahibi, Editör, Ziyaretçi — her kullanıcıya özel renk kodu"
+      ],
+      techStack: [
+        { label: "Frontend", value: "Next.js 16 (App Router) · TypeScript · React 19" },
+        { label: "Stil", value: "Tailwind CSS · Dark Glassmorphism" },
+        { label: "Veritabanı", value: "Supabase / PostgreSQL" },
+        { label: "Yapay Zeka", value: "Google Gemini AI" },
+        { label: "API'ler", value: "TMDB · RAWG · Open Library · Apple iTunes" },
+      ],
+      categories: ["Filmler", "Diziler", "Oyunlar", "Kitaplar", "Müzikler", "Özel / Diğer"],
+      elevator: "LISTOR; arkadaş gruplarının ortak listeler kurup beraber puanladığı, AI özetleri ve gerçek zamanlı sıralama sistemiyle çalışan sosyal bir keşif platformudur."
     },
     {
       id: "memory-line",
