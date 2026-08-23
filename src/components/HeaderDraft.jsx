@@ -3,25 +3,22 @@ import { siteData } from '../data/siteData';
 
 export default function HeaderDraft() {
   return (
-    <header className="text-center pt-8 pb-10 sm:pt-12 sm:pb-14 px-4">
-      <div className="max-w-4xl mx-auto">
-        {/* Crisp Bold High-Contrast Title */}
-        <h1 className="font-serif-title text-3xl sm:text-5xl md:text-6xl font-bold tracking-widest text-white uppercase mb-3 drop-shadow-sm">
+    <header className="py-16 sm:py-24">
+      <div className="space-y-4">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none">
           {siteData.personal.name}
         </h1>
-        
-        {/* Crisp Dividing Line */}
-        <div className="w-full max-w-2xl mx-auto h-[2px] bg-gradient-to-r from-transparent via-purple-500/70 to-transparent my-5" />
 
-        {/* Subtitle & Role */}
-        <p className="text-sm sm:text-base text-purple-300 font-semibold tracking-wide max-w-xl mx-auto mt-2">
-          {siteData.personal.title}
-        </p>
+        <div className="h-px w-full bg-white/10" />
 
-        {/* Location & Quick Contact */}
-        <p className="text-xs text-slate-400 mt-2 font-normal">
-          {siteData.personal.location} • <span className="text-slate-300">{siteData.personal.email}</span> • <span className="text-slate-300">{siteData.personal.phone}</span>
-        </p>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pt-1">
+          <p className="text-sm text-[#a3a3a3] max-w-md leading-relaxed">
+            {siteData.personal.title}
+          </p>
+          <p className="text-xs text-[#525252]">
+            {siteData.personal.location}
+          </p>
+        </div>
       </div>
     </header>
   );

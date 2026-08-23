@@ -1,110 +1,98 @@
 import React from 'react';
-import { X, ExternalLink, CheckCircle, Sparkles, Layers } from 'lucide-react';
+import { X, ExternalLink } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
 export default function ProjectModal({ project, onClose }) {
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-xs animate-fadeIn">
-      {/* Click outside to close */}
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/70 backdrop-blur-sm">
       <div className="fixed inset-0" onClick={onClose} />
 
-      <div className="relative w-full max-w-xl bg-[#111724] border border-white/15 rounded-3xl overflow-hidden shadow-2xl z-10 max-h-[90vh] flex flex-col">
-        
-        {/* Header Preview Banner */}
-        <div className="p-6 bg-[#172030] border-b border-white/10 flex items-center justify-between">
-          <div>
-            <div className="draft-pill-badge inline-block py-1 px-3 text-xs font-serif-title font-bold mb-2 text-slate-950">
-              {project.title}
-            </div>
-            <h3 className="text-lg font-bold text-white">
-              {project.tagline}
-            </h3>
-            <span className="text-xs text-slate-400 font-medium">
-              Kategori: {project.category} • Durum: {project.status}
-            </span>
-          </div>
+      <div className="relative w-full max-w-lg bg-[#111111] border border-white/[0.08] rounded-2xl overflow-hidden shadow-2xl z-10 max-h-[90vh] flex flex-col">
 
+        {/* Header */}
+        <div className="px-6 pt-6 pb-5 border-b border-white/[0.06] flex items-start justify-between gap-4">
+          <div className="space-y-1">
+            <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252]">
+              {project.category} · {project.status}
+            </span>
+            <h3 className="text-lg font-bold text-white leading-tight">{project.title}</h3>
+            <p className="text-xs text-[#737373]">{project.tagline}</p>
+          </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-full bg-white/5 hover:bg-white/15 text-slate-300 border border-white/10 transition-colors"
+            className="shrink-0 p-1.5 rounded-lg text-[#525252] hover:text-white transition-colors"
             aria-label="Kapat"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Modal Body */}
-        <div className="p-6 sm:p-8 overflow-y-auto space-y-6">
-          
+        {/* Body */}
+        <div className="px-6 py-5 overflow-y-auto space-y-5">
+
           {/* Description */}
-          <div>
-            <h4 className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-2">
-              Proje Açıklaması
-            </h4>
-            <p className="text-sm text-slate-200 leading-relaxed">
-              {project.description}
-            </p>
+          <div className="space-y-1.5">
+            <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252]">
+              Açıklama
+            </span>
+            <p className="text-sm text-[#a3a3a3] leading-relaxed">{project.description}</p>
           </div>
 
-          {/* Features List */}
+          {/* Features */}
           {project.features && project.features.length > 0 && (
-            <div>
-              <h4 className="text-xs uppercase tracking-wider text-purple-300 font-bold mb-3 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-purple-400" />
-                <span>Öne Çıkan Özellikler</span>
-              </h4>
-              <div className="space-y-2">
+            <div className="space-y-1.5">
+              <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252]">
+                Özellikler
+              </span>
+              <ul className="space-y-1.5">
                 {project.features.map((feat, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-300 bg-white/[0.03] p-2.5 rounded-xl border border-white/5">
-                    <CheckCircle className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                  <li key={idx} className="flex items-start gap-2 text-xs text-[#737373]">
+                    <span className="mt-1.5 w-1 h-1 rounded-full bg-[#525252] shrink-0" />
                     <span>{feat}</span>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           )}
 
-          {/* Tech Stack */}
+          {/* Tags */}
           {project.tags && project.tags.length > 0 && (
-            <div>
-              <h4 className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-2 flex items-center gap-2">
-                <Layers className="w-4 h-4 text-slate-400" />
-                <span>Teknolojiler & Etiketler</span>
-              </h4>
-              <div className="flex flex-wrap gap-2">
+            <div className="space-y-2">
+              <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252]">
+                Teknolojiler
+              </span>
+              <div className="flex flex-wrap gap-1.5">
                 {project.tags.map((tag, idx) => (
-                  <span key={idx} className="px-3 py-1 rounded-lg text-xs font-medium bg-purple-500/15 text-purple-300 border border-purple-500/30">
+                  <span key={idx} className="text-[10px] px-2 py-0.5 rounded border border-white/[0.08] text-[#525252]">
                     {tag}
                   </span>
                 ))}
               </div>
             </div>
           )}
-
         </div>
 
-        {/* Footer Actions */}
-        <div className="p-4 sm:p-6 border-t border-white/10 bg-[#0d121c] flex items-center justify-between gap-3">
-          <div>
+        {/* Footer */}
+        <div className="px-6 py-4 border-t border-white/[0.06] flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-white/5 border border-white/10 hover:bg-white/10 transition-all"
+                className="flex items-center gap-1.5 text-xs text-[#525252] hover:text-white transition-colors"
               >
                 <GithubIcon className="w-4 h-4" />
                 <span>GitHub</span>
               </a>
             )}
           </div>
-
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <button
               onClick={onClose}
-              className="px-4 py-2 text-xs font-medium text-slate-400 hover:text-white transition-colors"
+              className="text-xs text-[#525252] hover:text-white transition-colors"
             >
               Kapat
             </button>
@@ -113,9 +101,9 @@ export default function ProjectModal({ project, onClose }) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2 rounded-xl text-xs font-bold text-slate-950 bg-purple-300 hover:bg-purple-200 shadow-sm transition-all hover:scale-105"
+                className="flex items-center gap-1.5 text-xs font-medium text-white border border-white/10 px-3.5 py-1.5 rounded hover:bg-white hover:text-black transition-all"
               >
-                <span>Siteyi Aç</span>
+                <span>Siteye Git</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             )}

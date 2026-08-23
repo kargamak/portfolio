@@ -1,122 +1,87 @@
 import React, { useState } from 'react';
 import { siteData } from '../data/siteData';
-import { ArrowUpRight, Sparkles, ExternalLink, Info } from 'lucide-react';
+import { ArrowUpRight, ExternalLink } from 'lucide-react';
 import ProjectModal from './ProjectModal';
 
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <section id="projeler" className="scroll-mt-24 py-12 border-t border-white/10">
-      
-      {/* Draft-exact "PROJELERİM" Section Title */}
-      <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+    <section id="projeler" className="scroll-mt-20 py-16 border-t border-white/[0.06]">
+
+      {/* Section header */}
+      <div className="flex items-end justify-between mb-10">
         <div>
-          <h2 className="font-serif-title text-2xl sm:text-3xl font-bold tracking-wider text-white uppercase">
-            PROJELERİM
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-400 mt-1">
-            Geliştirdiğim canlı web uygulamaları, yapay zeka araçları ve platformlar.
-          </p>
+          <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-[#525252] block mb-2">
+            Dijital Ürünler
+          </span>
+          <h2 className="text-2xl font-bold text-white tracking-tight">Projelerim</h2>
         </div>
-        <span className="text-xs text-purple-400 font-medium">
-          Kartlara tıklayarak doğrudan siteye gidebilir veya detayları inceleyebilirsiniz.
-        </span>
+        <span className="text-xs text-[#525252]">{siteData.projects.length} proje</span>
       </div>
 
-      {/* 4 Cards Grid - Directly matching the wireframe */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Cards grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {siteData.projects.map((project) => (
           <div
             key={project.id}
-            className="group flex flex-col justify-between rounded-3xl bg-[#111726] border border-white/10 hover:border-purple-400/50 p-3.5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-purple-500/15"
+            className="group flex flex-col justify-between rounded-xl border border-white/[0.08] hover:border-white/20 p-5 transition-all duration-200"
           >
-            {/* Top Part: Preview Area matching the draft */}
-            <div className="relative h-44 sm:h-48 rounded-2xl bg-[#182136] group-hover:bg-[#1d2842] transition-colors p-4 flex flex-col justify-between overflow-hidden border border-white/5">
-              
-              {/* Subtle top indicator */}
-              <div className="flex items-center justify-between z-10">
-                <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-md bg-black/50 text-slate-200 backdrop-blur-md border border-white/10">
-                  {project.category}
-                </span>
-                <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/30">
-                  {project.status}
-                </span>
-              </div>
-
-              {/* Center app icon/hint */}
-              <div className="my-auto text-center z-10">
-                <div className="w-12 h-12 mx-auto rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-300 group-hover:scale-110 transition-transform shadow-lg shadow-purple-950/50">
-                  <Sparkles className="w-6 h-6" />
-                </div>
-                <p className="text-[11px] text-slate-200 font-medium mt-2.5 line-clamp-2 px-1">
-                  {project.tagline}
-                </p>
-              </div>
-
-              {/* Quick action buttons on preview box */}
-              <div className="flex items-center justify-center gap-2 z-20">
-                <button
-                  onClick={() => setSelectedProject(project)}
-                  className="text-[11px] font-semibold text-slate-200 bg-white/10 hover:bg-white/20 border border-white/10 px-3 py-1 rounded-lg transition-all flex items-center gap-1 backdrop-blur-md"
-                  title="Detaylar"
-                >
-                  <Info className="w-3.5 h-3.5" />
-                  <span>Detaylar</span>
-                </button>
-
-                {project.liveUrl && project.liveUrl !== '#' && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[11px] font-bold text-slate-950 bg-purple-300 hover:bg-purple-200 px-3 py-1 rounded-lg transition-all flex items-center gap-1 shadow-sm"
-                    title="Canlı Siteye Git"
-                  >
-                    <span>Siteyi Aç</span>
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
-                )}
-              </div>
-
+            {/* Top: category + status */}
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-[10px] font-medium text-[#525252] uppercase tracking-widest">
+                {project.category}
+              </span>
+              <span className="text-[10px] font-medium px-2 py-0.5 rounded bg-white/[0.06] text-[#737373]">
+                {project.status}
+              </span>
             </div>
 
-            {/* Bottom Part: The Draft's Characteristic Rounded Purple Pill Badge */}
-            <div className="mt-3.5">
-              {project.liveUrl && project.liveUrl !== '#' ? (
+            {/* Title + tagline */}
+            <div className="flex-1 mb-5">
+              <h3 className="text-base font-bold text-white mb-1.5">{project.title}</h3>
+              <p className="text-xs text-[#737373] leading-relaxed line-clamp-2">{project.tagline}</p>
+            </div>
+
+            {/* Tags */}
+            {project.tags && (
+              <div className="flex flex-wrap gap-1.5 mb-5">
+                {project.tags.slice(0, 3).map((tag, i) => (
+                  <span key={i} className="text-[10px] px-2 py-0.5 rounded border border-white/[0.08] text-[#525252]">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Actions */}
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setSelectedProject(project)}
+                className="text-xs text-[#737373] hover:text-white transition-colors"
+              >
+                Detaylar
+              </button>
+              {project.liveUrl && project.liveUrl !== '#' && (
                 <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="draft-pill-badge w-full py-3.5 px-4 flex items-center justify-between shadow-md group/btn text-slate-950 block"
+                  className="ml-auto flex items-center gap-1.5 text-xs font-medium text-white hover:text-white/70 transition-colors"
                 >
-                  <span className="font-serif-title font-extrabold text-sm sm:text-base tracking-wider uppercase truncate">
-                    {project.title}
-                  </span>
-                  <ArrowUpRight className="w-4 h-4 text-slate-950 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                  <span>Siteye Git</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
-              ) : (
-                <button
-                  onClick={() => setSelectedProject(project)}
-                  className="draft-pill-badge w-full py-3.5 px-4 flex items-center justify-center shadow-md text-slate-950"
-                >
-                  <span className="font-serif-title font-extrabold text-sm sm:text-base tracking-wider uppercase">
-                    {project.title}
-                  </span>
-                </button>
               )}
             </div>
-
           </div>
         ))}
       </div>
 
-      {/* Project Details Modal */}
       <ProjectModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
       />
-
     </section>
   );
 }

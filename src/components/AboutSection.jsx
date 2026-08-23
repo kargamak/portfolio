@@ -2,77 +2,73 @@ import React, { useState } from 'react';
 import { siteData } from '../data/siteData';
 
 export default function AboutSection() {
-  const [lang, setLang] = useState('tr'); // 'tr' or 'en'
+  const [lang, setLang] = useState('tr');
 
   return (
-    <section id="hakkimda" className="scroll-mt-24 py-10 border-t border-white/10">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-        
-        {/* Left: Bold High-Contrast "HAKKIMDA" Header */}
-        <div className="md:col-span-4 flex flex-col justify-between">
-          <h2 className="font-serif-title text-2xl sm:text-3xl font-bold tracking-wider text-white uppercase">
+    <section id="hakkimda" className="scroll-mt-20 py-16 border-t border-white/[0.06]">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+
+        {/* Left: Label + lang toggle */}
+        <div className="md:col-span-4">
+          <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-[#525252]">
+            Hakkımda
+          </span>
+          <h2 className="mt-3 text-2xl font-bold text-white tracking-tight">
             {siteData.about.title}
           </h2>
 
-          <div className="flex items-center gap-2 mt-4 no-print">
+          <div className="flex items-center gap-2 mt-6 no-print">
             <button
               onClick={() => setLang('tr')}
-              className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all ${
+              className={`px-3 py-1 text-xs rounded transition-all ${
                 lang === 'tr'
-                  ? 'bg-purple-600 text-white shadow-md shadow-purple-600/30'
-                  : 'bg-white/10 text-slate-300 hover:text-white hover:bg-white/15'
+                  ? 'bg-white text-black font-semibold'
+                  : 'text-[#737373] hover:text-white'
               }`}
             >
-              Türkçe
+              TR
             </button>
             <button
               onClick={() => setLang('en')}
-              className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all ${
+              className={`px-3 py-1 text-xs rounded transition-all ${
                 lang === 'en'
-                  ? 'bg-purple-600 text-white shadow-md shadow-purple-600/30'
-                  : 'bg-white/10 text-slate-300 hover:text-white hover:bg-white/15'
+                  ? 'bg-white text-black font-semibold'
+                  : 'text-[#737373] hover:text-white'
               }`}
             >
-              English
+              EN
             </button>
           </div>
         </div>
 
-        {/* Right: Crisp Detailed Bio Text from Europass CV */}
-        <div className="md:col-span-8 space-y-4 text-slate-200 text-sm sm:text-base leading-relaxed">
-          {lang === 'tr' ? (
-            <>
-              <p className="font-normal text-slate-200">
-                {siteData.about.tr}
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
-                <div className="p-4 bg-[#121828] border border-purple-500/20 rounded-xl shadow-xs">
-                  <span className="font-bold text-purple-300 block mb-1 text-xs uppercase tracking-wide">🎯 Odak Alanları:</span>
-                  <span className="text-slate-300">Ürün Yönetimi (Product Management), Kullanıcı Odaklı Tasarım, Sistem Analizi & Modelleme</span>
-                </div>
-                <div className="p-4 bg-[#121828] border border-purple-500/20 rounded-xl shadow-xs">
-                  <span className="font-bold text-purple-300 block mb-1 text-xs uppercase tracking-wide">🏆 Liderlik:</span>
-                  <span className="text-slate-300">AkdeMIS Topluluk Başkanlığı & II. TeknoYön Zirve Koordinatörlüğü (400 Katılımcı)</span>
-                </div>
-              </div>
-            </>
-          ) : (
-            <>
-              <p className="font-normal text-slate-200">
-                {siteData.about.en}
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
-                <div className="p-4 bg-[#121828] border border-purple-500/20 rounded-xl shadow-xs">
-                  <span className="font-bold text-purple-300 block mb-1 text-xs uppercase tracking-wide">🎯 Focus Areas:</span>
-                  <span className="text-slate-300">Product Management, User-Centered Design, Systems Analysis & Modeling</span>
-                </div>
-                <div className="p-4 bg-[#121828] border border-purple-500/20 rounded-xl shadow-xs">
-                  <span className="font-bold text-purple-300 block mb-1 text-xs uppercase tracking-wide">🏆 Leadership:</span>
-                  <span className="text-slate-300">Former President – AkdeMIS & TeknoYon Summit Coordinator (400 Participants)</span>
-                </div>
-              </div>
-            </>
-          )}
+        {/* Right: Bio text + highlights */}
+        <div className="md:col-span-8 space-y-6">
+          <p className="text-sm text-[#a3a3a3] leading-relaxed">
+            {lang === 'tr' ? siteData.about.tr : siteData.about.en}
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div className="space-y-1">
+              <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
+                Odak Alanları
+              </span>
+              <span className="text-xs text-[#a3a3a3] leading-relaxed">
+                {lang === 'tr'
+                  ? 'Ürün Yönetimi, Kullanıcı Odaklı Tasarım, Sistem Analizi'
+                  : 'Product Management, User-Centered Design, Systems Analysis'}
+              </span>
+            </div>
+            <div className="space-y-1">
+              <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
+                Liderlik
+              </span>
+              <span className="text-xs text-[#a3a3a3] leading-relaxed">
+                {lang === 'tr'
+                  ? 'AkdeMIS Topluluk Başkanlığı • TeknoYön Zirvesi (400 katılımcı)'
+                  : 'AkdeMIS President • TeknoYon Summit Coordinator (400 participants)'}
+              </span>
+            </div>
+          </div>
         </div>
 
       </div>
