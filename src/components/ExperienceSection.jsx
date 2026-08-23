@@ -19,12 +19,12 @@ export default function ExperienceSection() {
 
           <div className="space-y-6">
             {siteData.experience.map((item, idx) => (
-              <div key={idx} className="p-5 bg-[#131926] border border-white/10 rounded-2xl shadow-xs space-y-3">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 border-b border-white/10 pb-2">
+              <div key={idx} className="p-5 bg-[#111726] border border-white/10 rounded-2xl shadow-sm space-y-3 hover:border-purple-500/30 transition-colors">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 border-b border-white/10 pb-2.5">
                   <h3 className="font-bold text-white text-sm sm:text-base font-serif-title">
                     {item.role}
                   </h3>
-                  <span className="text-xs font-semibold text-purple-300 shrink-0">
+                  <span className="text-xs font-bold text-purple-300 shrink-0">
                     {item.company}
                   </span>
                 </div>
@@ -34,10 +34,10 @@ export default function ExperienceSection() {
                   <span>{item.location}</span>
                 </div>
 
-                <ul className="space-y-1.5 pt-1">
+                <ul className="space-y-2 pt-1">
                   {item.points.map((pt, i) => (
-                    <li key={i} className="text-xs text-slate-300 leading-relaxed flex items-start gap-2">
-                      <span className="text-purple-400 font-bold">•</span>
+                    <li key={i} className="text-xs sm:text-sm text-slate-300 leading-relaxed flex items-start gap-2.5">
+                      <span className="text-purple-400 font-bold mt-0.5">•</span>
                       <span>{pt}</span>
                     </li>
                   ))}
@@ -58,12 +58,12 @@ export default function ExperienceSection() {
 
           <div className="space-y-6">
             {siteData.education.map((edu, idx) => (
-              <div key={idx} className="p-5 bg-[#131926] border border-white/10 rounded-2xl shadow-xs space-y-3">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 border-b border-white/10 pb-2">
+              <div key={idx} className="p-5 bg-[#111726] border border-white/10 rounded-2xl shadow-sm space-y-3 hover:border-purple-500/30 transition-colors">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 border-b border-white/10 pb-2.5">
                   <h3 className="font-bold text-white text-sm sm:text-base font-serif-title">
                     {edu.degree}
                   </h3>
-                  <span className="text-xs font-semibold text-purple-300 shrink-0">
+                  <span className="text-xs font-bold text-purple-300 shrink-0">
                     {edu.school}
                   </span>
                 </div>
@@ -73,17 +73,17 @@ export default function ExperienceSection() {
                   <span>{edu.location}</span>
                 </div>
 
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                   {edu.description}
                 </p>
 
                 {edu.leadership && (
-                  <div className="mt-3 p-3.5 bg-purple-950/40 border border-purple-500/30 rounded-xl space-y-1">
-                    <div className="flex items-center gap-1.5 text-xs font-bold text-purple-200">
+                  <div className="mt-3.5 p-4 bg-purple-950/40 border border-purple-500/30 rounded-xl space-y-1.5 shadow-inner">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-purple-200 uppercase tracking-wide">
                       <Award className="w-4 h-4 text-purple-400" />
                       <span>{edu.leadership.title}</span>
                     </div>
-                    <p className="text-[11px] text-slate-300 leading-relaxed">
+                    <p className="text-xs text-slate-300 leading-relaxed">
                       {edu.leadership.details}
                     </p>
                   </div>
@@ -93,17 +93,17 @@ export default function ExperienceSection() {
 
             {/* Conferences / Seminars */}
             {siteData.conferences.map((conf, idx) => (
-              <div key={idx} className="p-4 bg-[#101520] border border-white/10 rounded-2xl space-y-2">
+              <div key={idx} className="p-5 bg-[#0e1422] border border-white/10 rounded-2xl space-y-2 hover:border-purple-500/20 transition-colors">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <Terminal className="w-4 h-4 text-slate-400" />
-                    <h4 className="text-xs font-bold text-slate-200 uppercase">
+                    <Terminal className="w-4 h-4 text-purple-400" />
+                    <h4 className="text-xs font-bold text-white uppercase">
                       {conf.title}
                     </h4>
                   </div>
                   <span className="text-[11px] text-slate-400">{conf.period}</span>
                 </div>
-                <p className="text-[11px] text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-300 leading-relaxed">
                   {conf.details}
                 </p>
               </div>

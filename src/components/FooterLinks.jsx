@@ -7,7 +7,7 @@ export default function FooterLinks() {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         
         {/* Draft-exact lowercase minimal links on bottom-left */}
-        <div className="flex items-center gap-8 text-sm font-medium text-slate-300 font-sans">
+        <div className="flex items-center gap-8 text-sm font-semibold text-slate-200 font-sans">
           {siteData.socials.map((s) => (
             <a
               key={s.name}
@@ -22,7 +22,7 @@ export default function FooterLinks() {
         </div>
 
         {/* Right side contact summary & copyright */}
-        <div className="text-xs text-slate-400 flex flex-col sm:items-end gap-1">
+        <div className="text-xs text-slate-400 flex flex-col sm:items-end gap-1 font-medium">
           <span>{siteData.personal.email} • {siteData.personal.phone}</span>
           <span className="text-[11px] text-slate-500">
             © {new Date().getFullYear()} {siteData.personal.name}. All rights reserved.

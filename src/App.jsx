@@ -9,23 +9,23 @@ import FooterLinks from './components/FooterLinks';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#f1f3f8] py-4 sm:py-8 px-2 sm:px-6 md:px-12 flex justify-center">
+    <div className="min-h-screen bg-[#070a12] text-slate-100 py-6 sm:py-10 px-3 sm:px-6 md:px-10 flex justify-center selection:bg-purple-500 selection:text-white">
       
-      {/* Outer Card with Draft-Faithful Purple Border Frame */}
-      <div className="w-full max-w-6xl bg-white draft-frame rounded-2xl sm:rounded-3xl shadow-xl flex flex-col justify-between p-6 sm:p-10 md:p-14 transition-all">
+      {/* Outer Card with Draft-Faithful Purple Border Frame & Modern Dark Palette */}
+      <div className="w-full max-w-6xl draft-frame rounded-2xl sm:rounded-3xl flex flex-col justify-between p-6 sm:p-10 md:p-12 transition-all">
         
         {/* Top Navbar */}
         <Navbar />
 
         {/* Main Content Sections */}
-        <main className="space-y-4">
-          {/* Header matching draft: UFUK EREN KURT + line */}
+        <main className="space-y-6">
+          {/* Header: UFUK EREN KURT */}
           <HeaderDraft />
 
-          {/* HAKKIMDA section matching draft */}
+          {/* HAKKIMDA section */}
           <AboutSection />
 
-          {/* PROJELERİM section matching draft 4-cards layout */}
+          {/* PROJELERİM section: LİSTOR, MEMORY LİNE, FINAİ, PIXELCAM */}
           <ProjectsSection />
 
           {/* DENEYİM & EĞİTİM from Europass CV */}

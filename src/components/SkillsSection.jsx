@@ -20,17 +20,17 @@ export default function SkillsSection() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {siteData.skillCategories.map((cat, idx) => (
-          <div key={idx} className="p-4 bg-[#131926] border border-white/10 rounded-2xl space-y-3">
-            <div className="flex items-center gap-2 border-b border-white/10 pb-2">
+          <div key={idx} className="p-4 sm:p-5 bg-[#111726] border border-white/10 rounded-2xl space-y-3.5 hover:border-purple-500/30 transition-colors">
+            <div className="flex items-center gap-2 border-b border-white/10 pb-2.5">
               {categoryIcons[cat.name] || <Code2 className="w-4 h-4 text-purple-400" />}
-              <h3 className="text-xs font-bold text-slate-200 uppercase tracking-wider">
+              <h3 className="text-xs font-bold text-white uppercase tracking-wider">
                 {cat.name}
               </h3>
             </div>
 
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {cat.skills.map((skill, i) => (
-                <li key={i} className="text-xs text-slate-300 flex items-start gap-2 leading-tight">
+                <li key={i} className="text-xs sm:text-sm text-slate-300 flex items-start gap-2 leading-relaxed">
                   <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
                   <span>{skill}</span>
                 </li>
