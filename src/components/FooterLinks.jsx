@@ -1,5 +1,5 @@
 import React from 'react';
-import { siteData } from '../data/siteData';
+import { siteData, getLocalized } from '../data/siteData';
 import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
@@ -66,7 +66,7 @@ export default function FooterLinks({ lang = 'en' }) {
             <span>·</span>
             <span className="flex items-center gap-1.5">
               <MapPin className="w-3 h-3 text-[#525252]" />
-              {siteData.personal.location}
+              {getLocalized(siteData.personal.location, lang)}
             </span>
           </div>
         </div>
@@ -74,9 +74,10 @@ export default function FooterLinks({ lang = 'en' }) {
 
       {/* Bottom copyright */}
       <div className="pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#525252]">
-        <span>© {new Date().getFullYear()} {siteData.personal.name}. Tüm hakları saklıdır.</span>
+        <span>
+          © {new Date().getFullYear()} {siteData.personal.name}. {isEn ? 'All rights reserved.' : 'Tüm hakları saklıdır.'}
+        </span>
       </div>
     </footer>
   );
 }
-

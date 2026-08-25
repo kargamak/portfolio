@@ -3,6 +3,9 @@ import { siteData } from '../data/siteData';
 
 export default function AboutSection({ lang = 'en' }) {
   const isEn = lang === 'en';
+  const bioParagraphs = Array.isArray(siteData.about[lang])
+    ? siteData.about[lang]
+    : [siteData.about[lang] || ''];
 
   return (
     <section id="hakkimda" className="scroll-mt-20 pt-8 sm:pt-10 pb-14 sm:pb-16 border-t border-white/[0.06]">
@@ -12,17 +15,14 @@ export default function AboutSection({ lang = 'en' }) {
           {isEn ? 'About Me' : 'Hakkımda'}
         </span>
         <h2 className="text-2xl font-bold text-white tracking-tight">
-          {isEn ? 'Background & Focus' : siteData.about.title}
+          {isEn ? 'Background & Focus' : 'Hakkımda & Odak Noktaları'}
         </h2>
       </div>
 
       {/* Full Width Bio Content */}
       <div className="space-y-8">
         <div className="space-y-4">
-          {(Array.isArray(isEn ? siteData.about.en : siteData.about.tr)
-            ? (isEn ? siteData.about.en : siteData.about.tr)
-            : [isEn ? siteData.about.en : siteData.about.tr]
-          ).map((paragraph, index) => (
+          {bioParagraphs.map((paragraph, index) => (
             <p key={index} className="text-sm sm:text-base text-[#a3a3a3] leading-relaxed">
               {paragraph}
             </p>
@@ -64,4 +64,3 @@ export default function AboutSection({ lang = 'en' }) {
     </section>
   );
 }
-

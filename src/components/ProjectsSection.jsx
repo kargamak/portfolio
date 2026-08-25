@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { siteData } from '../data/siteData';
+import { siteData, getLocalized } from '../data/siteData';
 import { ArrowUpRight, X } from 'lucide-react';
 
 export default function ProjectsSection({ lang = 'en' }) {
   const [expandedId, setExpandedId] = useState(null);
   const isEn = lang === 'en';
 
-  const toggle = (id) => setExpandedId(prev => prev === id ? null : id);
+  const toggle = (id) => setExpandedId(prev => (prev === id ? null : id));
 
   return (
     <section id="projeler" className="scroll-mt-20 py-16 border-t border-white/[0.06]">
@@ -32,6 +32,24 @@ export default function ProjectsSection({ lang = 'en' }) {
           const isExpanded = expandedId === project.id;
           const isOtherExpanded = expandedId && !isExpanded;
 
+          const category = getLocalized(project.category, lang);
+          const status = getLocalized(project.status, lang);
+          const tagline = getLocalized(project.tagline, lang);
+          const description = getLocalized(project.description, lang);
+          const elevator = getLocalized(project.elevator, lang);
+
+          const features = Array.isArray(project.features)
+            ? project.features
+            : (project.features?.[lang] || []);
+
+          const techStack = Array.isArray(project.techStack)
+            ? project.techStack
+            : (project.techStack?.[lang] || []);
+
+          const categories = Array.isArray(project.categories)
+            ? project.categories
+            : (project.categories?.[lang] || []);
+
           return (
             <div
               key={project.id}
@@ -50,15 +68,15 @@ export default function ProjectsSection({ lang = 'en' }) {
                   <div className="flex items-start justify-between gap-4 mb-8">
                     <div className="space-y-1">
                       <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-[#525252]">
-                        {project.category} · {project.status}
+                        {category} · {status}
                       </span>
                       <h3 className="text-2xl font-bold text-white">{project.title}</h3>
-                      <p className="text-sm text-[#737373] italic">{project.tagline}</p>
+                      <p className="text-sm text-[#737373] italic">{tagline}</p>
                     </div>
                     <button
                       onClick={() => setExpandedId(null)}
                       className="shrink-0 p-1.5 text-[#525252] hover:text-white transition-colors"
-                      aria-label="Close"
+                      aria-label={isEn ? "Close" : "Kapat"}
                     >
                       <X className="w-4 h-4" />
                     </button>
@@ -75,26 +93,28 @@ export default function ProjectsSection({ lang = 'en' }) {
                         <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
                           {isEn ? 'About Project' : 'Proje Hakkında'}
                         </span>
-                        <p className="text-sm text-[#a3a3a3] leading-relaxed">{project.description}</p>
+                        <p className="text-sm text-[#a3a3a3] leading-relaxed">{description}</p>
                       </div>
 
                       {/* Elevator pitch */}
-                      {project.elevator && (
+                      {elevator && (
                         <div className="border-l-2 border-white/[0.08] pl-4">
-                          <p className="text-xs text-[#525252] leading-relaxed italic">"{project.elevator}"</p>
+                          <p className="text-xs text-[#525252] leading-relaxed italic">"{elevator}"</p>
                         </div>
                       )}
 
                       {/* Tech stack */}
-                      {project.techStack && (
+                      {techStack.length > 0 && (
                         <div className="space-y-2">
                           <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
-                            {isEn ? 'Tech Stack' : 'Teknoloji Stack'}
+                            {isEn ? 'Tech Stack' : 'Teknoloji Yığını'}
                           </span>
                           <div className="divide-y divide-white/[0.04]">
-                            {project.techStack.map((item, i) => (
+                            {techStack.map((item, i) => (
                               <div key={i} className="flex items-start gap-4 py-2">
-                                <span className="text-[10px] font-semibold text-[#525252] w-20 shrink-0 pt-0.5">{item.label}</span>
+                                <span className="text-[10px] font-semibold text-[#525252] w-24 shrink-0 pt-0.5">
+                                  {getLocalized(item.label, lang)}
+                                </span>
                                 <span className="text-xs text-[#a3a3a3]">{item.value}</span>
                               </div>
                             ))}
@@ -107,13 +127,13 @@ export default function ProjectsSection({ lang = 'en' }) {
                     <div className="space-y-6">
 
                       {/* Features */}
-                      {project.features && (
+                      {features.length > 0 && (
                         <div className="space-y-2">
                           <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
                             {isEn ? 'Key Features' : 'Öne Çıkan Özellikler'}
                           </span>
                           <ul className="space-y-2">
-                            {project.features.map((feat, i) => (
+                            {features.map((feat, i) => (
                               <li key={i} className="flex items-start gap-2 text-xs text-[#737373]">
                                 <span className="mt-1.5 w-1 h-1 rounded-full bg-[#525252] shrink-0" />
                                 <span>{feat}</span>
@@ -124,7 +144,7 @@ export default function ProjectsSection({ lang = 'en' }) {
                       )}
 
                       {/* Categories */}
-                      {project.categories && (
+                      {categories.length > 0 && (
                         <div className="space-y-2">
                           <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
                             {project.id === 'finai'
@@ -134,7 +154,7 @@ export default function ProjectsSection({ lang = 'en' }) {
                               : (isEn ? 'Supported Categories' : 'Desteklenen Kategoriler')}
                           </span>
                           <div className="flex flex-wrap gap-1.5">
-                            {project.categories.map((cat, i) => (
+                            {categories.map((cat, i) => (
                               <span key={i} className="text-[10px] px-2 py-0.5 rounded border border-white/[0.08] text-[#737373]">
                                 {cat}
                               </span>
@@ -144,18 +164,20 @@ export default function ProjectsSection({ lang = 'en' }) {
                       )}
 
                       {/* Tags */}
-                      <div className="space-y-2">
-                        <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
-                          {isEn ? 'Tags' : 'Etiketler'}
-                        </span>
-                        <div className="flex flex-wrap gap-1.5">
-                          {project.tags.map((tag, i) => (
-                            <span key={i} className="text-[10px] px-2 py-0.5 rounded border border-white/[0.08] text-[#525252]">
-                              {tag}
-                            </span>
-                          ))}
+                      {project.tags && (
+                        <div className="space-y-2">
+                          <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
+                            {isEn ? 'Tags' : 'Etiketler'}
+                          </span>
+                          <div className="flex flex-wrap gap-1.5">
+                            {project.tags.map((tag, i) => (
+                              <span key={i} className="text-[10px] px-2 py-0.5 rounded border border-white/[0.08] text-[#525252]">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   </div>
 
@@ -180,16 +202,16 @@ export default function ProjectsSection({ lang = 'en' }) {
                 <div className="p-5" onClick={() => toggle(project.id)}>
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-[10px] font-medium text-[#525252] uppercase tracking-widest">
-                      {project.category}
+                      {category}
                     </span>
                     <span className="text-[10px] font-medium px-2 py-0.5 rounded bg-white/[0.06] text-[#737373]">
-                      {project.status}
+                      {status}
                     </span>
                   </div>
 
                   <div className="flex-1 mb-5">
                     <h3 className="text-base font-bold text-white mb-1.5">{project.title}</h3>
-                    <p className="text-xs text-[#737373] leading-relaxed line-clamp-2">{project.tagline}</p>
+                    <p className="text-xs text-[#737373] leading-relaxed line-clamp-2">{tagline}</p>
                   </div>
 
                   {project.tags && (
