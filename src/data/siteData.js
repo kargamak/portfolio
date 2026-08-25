@@ -164,12 +164,12 @@ export const siteData = {
       points: {
         tr: [
           "El terminalleri ile ürün toplama ve dağıtım süreçlerini yöneterek operasyonel verimlilik ve stok doğruluğu sağladım.",
-          "Mal kabul ve envanter süreçlerini koordine ederek operasyonel iş akışını optimize ettim.",
+          "Mal kabul ve envanter süreçlerine aktif destek vererek operasyonel iş akışını kolaylaştırdım.",
           "Yoğun ve dinamik bir ekip ortamında iletişim odaklı operasyon görevlerini başarıyla yürüttüm."
         ],
         en: [
-          "Managed product picking and distribution processes with handheld terminals, ensuring operational efficiency and inventory accuracy.",
-          "Coordinated receiving and inventory management processes to optimize daily operational workflow.",
+          "Managed product picking and distribution processes using handheld terminals, ensuring operational efficiency and inventory accuracy.",
+          "Actively supported goods receiving and inventory processes, streamlining daily operational workflows.",
           "Successfully executed communication-driven operational tasks within a fast-paced, dynamic team environment."
         ]
       }
