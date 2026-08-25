@@ -142,37 +142,59 @@ export const siteData = {
       role: "Software System Analyst Intern",
       company: "Identify",
       period: "30/06/2025 – 23/06/2026",
-      location: "İstanbul, Türkiye",
-      points: [
-        "İş gereksinimlerinin toplanması, belgelenmesi ve analiz süreçlerine katkı sağlandı.",
-        "Kullanıcı ihtiyaçlarını anlamak için sistem akış şemaları ve süreç modellerinin hazırlanması desteklendi.",
-        "Analiz ekibi için test senaryoları ve teknik dokümantasyon oluşturulmasında aktif rol alındı."
-      ]
+      location: { tr: "İstanbul, Türkiye", en: "Istanbul, Turkey" },
+      points: {
+        tr: [
+          "İş gereksinimlerini toplayarak Jira ve Confluence üzerinde teknik dokümantasyon ve kullanıcı senaryoları (User Stories) hazırladım.",
+          "Kullanıcı ihtiyaçlarını analiz etmek amacıyla BPMN standartlarında sistem akış şemaları ve iş süreç modelleri tasarladım.",
+          "Yazılım ve analiz ekibi için uçtan uca test senaryoları oluşturarak SDLC (Yazılım Geliştirme Yaşam Döngüsü) süreçlerini destekledim."
+        ],
+        en: [
+          "Gathered business requirements to create technical documentation and User Stories on Jira and Confluence.",
+          "Designed system flowcharts and business process models in BPMN standards to analyze user needs.",
+          "Developed end-to-end test scenarios for software and analysis teams, supporting full SDLC processes."
+        ]
+      }
     },
     {
       role: "Warehouse and Logistics Operations",
       company: "Ekol Logistics",
       period: "03/07/2023 – 10/08/2023",
-      location: "İstanbul, Türkiye",
-      points: [
-        "El terminalleri ile ürün toplama ve dağıtım süreçleri yönetilerek doğruluk ve verimlilik sağlandı.",
-        "Mal kabul ve envanter süreçlerine destek verilerek operasyonel akış kolaylaştırıldı.",
-        "Takım çalışması ve etkin iletişim odaklı operasyon görevleri başarıyla yürütüldü."
-      ]
+      location: { tr: "İstanbul, Türkiye", en: "Istanbul, Turkey" },
+      points: {
+        tr: [
+          "El terminalleri ile ürün toplama ve dağıtım süreçlerini yöneterek operasyonel verimlilik ve stok doğruluğu sağladım.",
+          "Mal kabul ve envanter süreçlerini koordine ederek operasyonel iş akışını optimize ettim.",
+          "Yoğun ve dinamik bir ekip ortamında iletişim odaklı operasyon görevlerini başarıyla yürüttüm."
+        ],
+        en: [
+          "Managed product picking and distribution processes with handheld terminals, ensuring operational efficiency and inventory accuracy.",
+          "Coordinated receiving and inventory management processes to optimize daily operational workflow.",
+          "Successfully executed communication-driven operational tasks within a fast-paced, dynamic team environment."
+        ]
+      }
     }
   ],
 
   // --- EĞİTİM & LİDERLİK ---
   education: [
     {
-      degree: "Yönetim Bilişim Sistemleri (Lisans)",
-      school: "Akdeniz Üniversitesi",
-      period: "10/10/2023 – Günümüz",
-      location: "Antalya, Türkiye",
-      description: "Veri yönetimi, sistem analizi ve dijital dönüşüm odaklı eğitim. Kurumsal verimliliği artıran bilgi sistemlerinin tasarımı, ürün ve proje yönetimi alanlarında uzmanlaşma.",
+      degree: { tr: "Yönetim Bilişim Sistemleri (Lisans)", en: "Management Information Systems (B.Sc.)" },
+      school: { tr: "Akdeniz Üniversitesi", en: "Akdeniz University" },
+      period: { tr: "10/10/2023 – Günümüz", en: "10/10/2023 – Present" },
+      location: { tr: "Antalya, Türkiye", en: "Antalya, Turkey" },
+      description: {
+        tr: "Veri yönetimi, sistem analizi ve dijital dönüşüm odaklı eğitim. Kurumsal verimliliği artıran bilgi sistemleri tasarımı ile Ürün ve Proje Yönetimi alanlarına odaklanma.",
+        en: "Education focused on data management, systems analysis, and digital transformation. Specialization in information systems design for organizational efficiency and Product & Project Management."
+      },
       leadership: {
-        title: "Eski Topluluk Başkanı – AkdeMIS (500+ Üye)",
-        details: "Akdeniz Üniversitesi'nde Türkiye'nin ilk YBS öğrenci topluluğunun başkanlığı yürütüldü. 400 katılımcılı II. TeknoYön Teknoloji & Yönetim Zirvesi'nin konuşmacı, lojistik ve sponsorluk koordinasyonu yönetildi."
+        title: { tr: "ESKİ TOPLULUK BAŞKANI – AKDEMIS (500+ ÜYE)", en: "FORMER PRESIDENT – AKDEMIS (500+ MEMBERS)" },
+        period: "2024 – 2025",
+        school: { tr: "Akdeniz Üniversitesi", en: "Akdeniz University" },
+        details: {
+          tr: "Türkiye'nin ilk YBS öğrenci topluluğunun başkanlığını yürüterek 30+ kişilik çekirdek ekibi ve farklı departmanları koordineli yönettim. 400+ katılımcılı II. TeknoYön Teknoloji & Yönetim Zirvesi’nin konuşmacı ilişkilerini, lojistik operasyonlarını, sponsorluk süreçlerini ve multidisipliner eğitim serilerini başarıyla koordine ettim.",
+          en: "Led Turkey's first MIS student community, coordinating a 30+ member core team across multiple departments. Successfully managed speaker relations, logistics, sponsorships, multidisciplinary training series, and the II. TeknoYön Technology & Management Summit with 400+ attendees."
+        }
       }
     }
   ],
@@ -180,10 +202,13 @@ export const siteData = {
   // --- KONFERANSLAR ---
   conferences: [
     {
-      title: "Linux Kullanıcıları Derneği Kış Kampı",
-      organization: "Afyon Kocatepe Üniversitesi",
+      title: { tr: "Linux Kullanıcıları Derneği Kış Kampı", en: "Linux Users Association Winter Camp" },
+      organization: { tr: "Afyon Kocatepe Üniversitesi", en: "Afyon Kocatepe University" },
       period: "04/02/2026 – 08/02/2026",
-      details: "Mikroservis mimarileri, SDLC tabanlı yazılım geliştirme, CI/CD, DevOps, konteynerleştirme ve temel sistem tasarım kalıpları üzerine teorik ve pratik eğitim tamamlandı."
+      details: {
+        tr: "Mikroservis mimarileri, CI/CD, DevOps, konteynerleştirme ve temel sistem tasarım kalıpları üzerine pratik ve teorik eğitimi tamamladım.",
+        en: "Completed theoretical and hands-on training on microservices architecture, CI/CD, DevOps, containerization, and foundational system design patterns."
+      }
     }
   ],
 
