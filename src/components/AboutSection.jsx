@@ -18,9 +18,16 @@ export default function AboutSection({ lang = 'en' }) {
 
       {/* Full Width Bio Content */}
       <div className="space-y-8">
-        <p className="text-sm sm:text-base text-[#a3a3a3] leading-relaxed">
-          {isEn ? siteData.about.en : siteData.about.tr}
-        </p>
+        <div className="space-y-4">
+          {(Array.isArray(isEn ? siteData.about.en : siteData.about.tr)
+            ? (isEn ? siteData.about.en : siteData.about.tr)
+            : [isEn ? siteData.about.en : siteData.about.tr]
+          ).map((paragraph, index) => (
+            <p key={index} className="text-sm sm:text-base text-[#a3a3a3] leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
+        </div>
 
         {/* Highlights Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-white/[0.04]">
