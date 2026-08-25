@@ -5,7 +5,7 @@ export default function AboutSection({ lang = 'en' }) {
   const isEn = lang === 'en';
 
   return (
-    <section id="hakkimda" className="scroll-mt-20 py-16 border-t border-white/[0.06]">
+    <section id="hakkimda" className="scroll-mt-20 pt-8 sm:pt-10 pb-14 sm:pb-16 border-t border-white/[0.06]">
       {/* Top Section Header */}
       <div className="mb-8">
         <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-[#525252] block mb-2">

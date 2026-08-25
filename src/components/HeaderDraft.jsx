@@ -3,7 +3,7 @@ import { siteData } from '../data/siteData';
 
 export default function HeaderDraft() {
   return (
-    <header className="py-16 sm:py-24">
+    <header className="pt-10 sm:pt-14 pb-8 sm:pb-10">
       <div className="space-y-4">
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-none">
           {siteData.personal.name}
