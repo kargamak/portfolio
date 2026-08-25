@@ -29,28 +29,35 @@ export default function AboutSection({ lang = 'en' }) {
           ))}
         </div>
 
-        {/* Highlights Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-white/[0.04]">
-          <div className="space-y-1.5">
-            <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
-              {isEn ? 'Focus Areas' : 'Odak Alanları'}
-            </span>
-            <span className="text-xs text-[#a3a3a3] leading-relaxed">
-              {isEn
-                ? 'Product Management, User-Centered Design, Systems Analysis'
-                : 'Ürün Yönetimi, Kullanıcı Odaklı Tasarım, Sistem Analizi'}
-            </span>
-          </div>
-
-          <div className="space-y-1.5">
-            <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
-              {isEn ? 'Leadership' : 'Liderlik'}
-            </span>
-            <span className="text-xs text-[#a3a3a3] leading-relaxed">
-              {isEn
-                ? 'AkdeMIS President • TeknoYon Summit Coordinator (400 participants)'
-                : 'AkdeMIS Topluluk Başkanlığı • TeknoYön Zirvesi (400 katılımcı)'}
-            </span>
+        {/* Focus Areas */}
+        <div className="pt-4 border-t border-white/[0.04] space-y-2">
+          <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
+            {isEn ? 'Core Focus & Competencies' : 'Temel Odak Alanları'}
+          </span>
+          <div className="flex flex-wrap gap-2 pt-1">
+            {(isEn
+              ? [
+                  'Product & Project Management',
+                  'User-Centered Design (UI/UX)',
+                  'Agile Workflows & Jira',
+                  'AI-Assisted Product Development',
+                  'System Analysis & Scoping'
+                ]
+              : [
+                  'Ürün & Proje Yönetimi',
+                  'Kullanıcı Odaklı Tasarım (UI/UX)',
+                  'Çevik Süreçler & Jira',
+                  'Yapay Zeka Destekli Ürün Geliştirme',
+                  'Sistem Analizi & Kapsam Belirleme'
+                ]
+            ).map((item, i) => (
+              <span
+                key={i}
+                className="text-xs px-2.5 py-1 rounded border border-white/[0.08] text-[#a3a3a3]"
+              >
+                {item}
+              </span>
+            ))}
           </div>
         </div>
       </div>
