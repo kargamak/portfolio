@@ -1,14 +1,18 @@
 import React from 'react';
 import { siteData } from '../data/siteData';
 
-export default function SkillsSection() {
+export default function SkillsSection({ lang = 'en' }) {
+  const isEn = lang === 'en';
+
   return (
     <section id="yetenekler" className="scroll-mt-20 py-16 border-t border-white/[0.06]">
       <div className="mb-10">
         <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-[#525252] block mb-2">
-          Yetenekler
+          {isEn ? 'Core Competencies' : 'Yetenekler'}
         </span>
-        <h2 className="text-xl font-bold text-white tracking-tight">Skills & Expertise</h2>
+        <h2 className="text-xl font-bold text-white tracking-tight">
+          {isEn ? 'Skills & Expertise' : 'Yetenekler & Uzmanlıklar'}
+        </h2>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

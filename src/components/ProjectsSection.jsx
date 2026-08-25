@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { siteData } from '../data/siteData';
 import { ArrowUpRight, X } from 'lucide-react';
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ lang = 'en' }) {
   const [expandedId, setExpandedId] = useState(null);
+  const isEn = lang === 'en';
 
   const toggle = (id) => setExpandedId(prev => prev === id ? null : id);
 
@@ -14,11 +15,15 @@ export default function ProjectsSection() {
       <div className="flex items-end justify-between mb-10">
         <div>
           <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-[#525252] block mb-2">
-            Dijital Ürünler
+            {isEn ? 'Digital Products' : 'Dijital Ürünler'}
           </span>
-          <h2 className="text-2xl font-bold text-white tracking-tight">Projelerim</h2>
+          <h2 className="text-2xl font-bold text-white tracking-tight">
+            {isEn ? 'Featured Projects' : 'Projelerim'}
+          </h2>
         </div>
-        <span className="text-xs text-[#525252]">{siteData.projects.length} proje</span>
+        <span className="text-xs text-[#525252]">
+          {siteData.projects.length} {isEn ? 'projects' : 'proje'}
+        </span>
       </div>
 
       {/* Cards grid */}
@@ -53,6 +58,7 @@ export default function ProjectsSection() {
                     <button
                       onClick={() => setExpandedId(null)}
                       className="shrink-0 p-1.5 text-[#525252] hover:text-white transition-colors"
+                      aria-label="Close"
                     >
                       <X className="w-4 h-4" />
                     </button>
@@ -67,7 +73,7 @@ export default function ProjectsSection() {
                       {/* Description */}
                       <div className="space-y-1.5">
                         <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
-                          Proje Hakkında
+                          {isEn ? 'About Project' : 'Proje Hakkında'}
                         </span>
                         <p className="text-sm text-[#a3a3a3] leading-relaxed">{project.description}</p>
                       </div>
@@ -83,7 +89,7 @@ export default function ProjectsSection() {
                       {project.techStack && (
                         <div className="space-y-2">
                           <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
-                            Teknoloji Stack
+                            {isEn ? 'Tech Stack' : 'Teknoloji Stack'}
                           </span>
                           <div className="divide-y divide-white/[0.04]">
                             {project.techStack.map((item, i) => (
@@ -104,7 +110,7 @@ export default function ProjectsSection() {
                       {project.features && (
                         <div className="space-y-2">
                           <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
-                            Öne Çıkan Özellikler
+                            {isEn ? 'Key Features' : 'Öne Çıkan Özellikler'}
                           </span>
                           <ul className="space-y-2">
                             {project.features.map((feat, i) => (
@@ -122,10 +128,10 @@ export default function ProjectsSection() {
                         <div className="space-y-2">
                           <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
                             {project.id === 'finai'
-                              ? '11 Analiz Kategorisi'
+                              ? (isEn ? '11 Analysis Categories' : '11 Analiz Kategorisi')
                               : project.id === 'memory-line'
-                              ? 'Özel Takımyıldızı Seviyeleri'
-                              : 'Desteklenen Kategoriler'}
+                              ? (isEn ? 'Special Constellation Levels' : 'Özel Takımyıldızı Seviyeleri')
+                              : (isEn ? 'Supported Categories' : 'Desteklenen Kategoriler')}
                           </span>
                           <div className="flex flex-wrap gap-1.5">
                             {project.categories.map((cat, i) => (
@@ -140,7 +146,7 @@ export default function ProjectsSection() {
                       {/* Tags */}
                       <div className="space-y-2">
                         <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[#525252] block">
-                          Etiketler
+                          {isEn ? 'Tags' : 'Etiketler'}
                         </span>
                         <div className="flex flex-wrap gap-1.5">
                           {project.tags.map((tag, i) => (
@@ -162,7 +168,7 @@ export default function ProjectsSection() {
                         rel="noopener noreferrer"
                         className="flex items-center gap-1.5 text-xs font-medium text-white border border-white/10 px-4 py-2 rounded hover:bg-white hover:text-black transition-all"
                       >
-                        <span>Siteye Git</span>
+                        <span>{isEn ? 'Visit Live Site' : 'Siteye Git'}</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </a>
                     </div>
@@ -197,7 +203,9 @@ export default function ProjectsSection() {
                   )}
 
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-[#525252]">Detaylar</span>
+                    <span className="text-xs text-[#525252]">
+                      {isEn ? 'Details' : 'Detaylar'}
+                    </span>
                     {project.liveUrl && project.liveUrl !== '#' && (
                       <a
                         href={project.liveUrl}
@@ -206,7 +214,7 @@ export default function ProjectsSection() {
                         onClick={(e) => e.stopPropagation()}
                         className="flex items-center gap-1.5 text-xs font-medium text-white hover:text-white/70 transition-colors"
                       >
-                        <span>Siteye Git</span>
+                        <span>{isEn ? 'Visit Site' : 'Siteye Git'}</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </a>
                     )}

@@ -1,7 +1,9 @@
 import React from 'react';
 import { siteData } from '../data/siteData';
 
-export default function ExperienceSection() {
+export default function ExperienceSection({ lang = 'en' }) {
+  const isEn = lang === 'en';
+
   return (
     <section id="deneyim" className="scroll-mt-20 py-16 border-t border-white/[0.06]">
 
@@ -11,9 +13,11 @@ export default function ExperienceSection() {
         <div className="md:col-span-6 space-y-8">
           <div>
             <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-[#525252] block mb-2">
-              İş Deneyimi
+              {isEn ? 'Career History' : 'İş Deneyimi'}
             </span>
-            <h2 className="text-xl font-bold text-white tracking-tight">Work Experience</h2>
+            <h2 className="text-xl font-bold text-white tracking-tight">
+              {isEn ? 'Work Experience' : 'İş Deneyimi'}
+            </h2>
           </div>
 
           <div className="space-y-6">
@@ -47,10 +51,13 @@ export default function ExperienceSection() {
         <div className="md:col-span-6 space-y-8">
           <div>
             <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-[#525252] block mb-2">
-              Eğitim & Liderlik
+              {isEn ? 'Academic Background' : 'Eğitim & Liderlik'}
             </span>
-            <h2 className="text-xl font-bold text-white tracking-tight">Education</h2>
+            <h2 className="text-xl font-bold text-white tracking-tight">
+              {isEn ? 'Education & Leadership' : 'Eğitim & Liderlik'}
+            </h2>
           </div>
+
 
           <div className="space-y-6">
             {siteData.education.map((edu, idx) => (

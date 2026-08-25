@@ -3,20 +3,24 @@ import { siteData } from '../data/siteData';
 import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
-export default function FooterLinks() {
+export default function FooterLinks({ lang = 'en' }) {
+  const isEn = lang === 'en';
+
   return (
     <footer id="iletisim" className="scroll-mt-20 pt-16 pb-12 border-t border-white/[0.06]">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-12">
         {/* Left header */}
         <div className="md:col-span-6 space-y-2">
           <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-[#525252] block">
-            İletişim
+            {isEn ? 'Contact' : 'İletişim'}
           </span>
           <h2 className="text-xl font-bold text-white tracking-tight">
-            Bağlantıda Kalalım
+            {isEn ? "Let's Connect" : 'Bağlantıda Kalalım'}
           </h2>
           <p className="text-xs text-[#737373] max-w-sm leading-relaxed">
-            Yeni bir proje, iş birliği veya sistem analizi & ürün yönetimi konularında görüşmek için bana dilediğiniz kanaldan ulaşabilirsiniz.
+            {isEn
+              ? 'Feel free to reach out for project inquiries, collaboration opportunities, or system analysis & product management discussions.'
+              : 'Yeni bir proje, iş birliği veya sistem analizi & ürün yönetimi konularında görüşmek için bana dilediğiniz kanaldan ulaşabilirsiniz.'}
           </p>
         </div>
 
@@ -71,7 +75,6 @@ export default function FooterLinks() {
       {/* Bottom copyright */}
       <div className="pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[#525252]">
         <span>© {new Date().getFullYear()} {siteData.personal.name}. Tüm hakları saklıdır.</span>
-        <span>Minimalist Portfolyo</span>
       </div>
     </footer>
   );
